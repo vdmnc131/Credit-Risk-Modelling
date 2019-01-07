@@ -6,15 +6,13 @@ import keras
 import random
 import keras.utils
 from keras import utils as np_utils
-from imblearn.over_sampling import SMOTE, ADASYN
+from imblearn.over_sampling import SMOTE
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import KFold
 from sklearn.preprocessing import LabelEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import StratifiedKFold
 from keras.layers.normalization import BatchNormalization
 
 class Credit_Risk(object):
@@ -27,13 +25,7 @@ class Credit_Risk(object):
         self.y_test = None
 	self.y_predict = None
 
-    ## encode class values as integers
-    #encoder = LabelEncoder()
-    #encoder.fit(Y)
-    #encoded_Y = encoder.transform(Y)
-    ## convert integers to dummy variables (i.e. one hot encoded)
-    #dummy_y = keras.utils.to_categorical(encoded_Y)
-    
+   
 
     def load_data(self):
 	for node in range(5):
